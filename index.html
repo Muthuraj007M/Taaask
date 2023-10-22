@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <title>Task</title>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    .outer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: Arial, Helvetica, sans-serif;
+  
+    }
+    .navside{
+        height: 100vh;
+        width: 250px;
+        background-color:#1e293b ;
+        padding-top: 20px;
+        display: flex;
+        justify-content: center;
+
+    }
+    .side{
+        width: 1000px;
+        height: 100vh;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        overflow: scroll;
+        padding-left: 10px
+    }
+    .head{
+        border: 2px solid white;
+        width: 900px;
+        height: 60px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 5px;
+        box-shadow: inset 0px 0px 5px black;
+    }
+    .head .hone{
+        display: flex;
+        align-items: center;
+        border: 2px solid white;
+        height: 50px;
+        width: 600px;
+        padding-left: 10px;
+        flex-wrap: wrap;
+        margin-left: 5px;
+        gap: 20px;
+        justify-content: center;
+    }
+    .head .hone input{
+        height: 30px;
+        border: 2px solid grey;
+        border-radius: 18px;
+        width: 300px;
+        padding-left: 10px;
+        background-color: whitesmoke;
+        color: grey;
+        display: flex;
+        justify-content: center;
+        align-items: start;
+        margin-bottom: 3px;
+    }
+    .head .hone p{
+        padding-top: 10px;
+        color: grey;
+        font-size: 16px;
+    }
+    .head .htwo{
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        border: 2px solid white;
+        height: 30px;
+        width: 350px;
+        padding-right: 10px;
+        margin-right: 5px;
+    }
+    .head .htwo a{
+        display: flex;
+        text-decoration: none;
+        border-radius: 25px;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid white;
+        height: 40px;
+        width: 120px;
+        box-shadow: inset 0px 0px 5px black;
+        color: black;
+        padding: 2px;
+        font-weight: 600;
+    }
+    .head .htwo a:hover{
+        background-color: black;
+        color: white;
+    }
+    .aside{
+        border: 2px solid whitesmoke;
+        width: 900px;
+        height: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 5px;
+        box-shadow: inset 0px 0px 5px black;
+        border-radius: 10px;
+    }
+    .section{
+        width: 900px;
+        height: 500px;
+        border-radius: 10px;
+        background-color: black;
+        padding: 10px;
+    }
+    .nav .nhe{
+        height: 50px;
+        width: 250px;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        color:#10b981;
+        padding-left: 20px;
+    }
+    .nav .btns{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    .nav .btns a{
+        height:100px;
+        width: 250px;
+        text-decoration: none;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        color: white;
+        font-size: 20px;
+        padding-left: 20px;
+
+    }
+    .nav .btns a:hover{
+        background-color: #10b981;
+    }
+    .section .cont{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .section .cont p{
+        height: 60px;
+        width: 900px;
+        font-size: 20px;
+    }
+    .section .cont a{
+        text-decoration: none;
+        border: 1px solid #10b981;
+        height: 40px;
+        width: 200px;
+        margin-right: 10px;
+        margin-bottom: 60px;
+        background-color: #10b981;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 15px;
+    }
+    .aside .left{
+        border: 2px solid white;
+        box-shadow: inset 0px 0px 5px black;
+        height: 250px;
+        width: 400px;
+        border-radius: 10px;
+        padding-left: 20px;
+        padding-top: 20px;
+    }
+    .aside .left .box{
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+    .aside .right{
+        border: 2px solid white;
+        box-shadow: inset 0px 0px 5px black;
+        height: 250px;
+        width: 400px;
+        border-radius: 10px;
+
+    }
+    .aside .right{
+        border: 2px solid white;
+        box-shadow: inset 0px 0px 5px black;
+        height: 250px;
+        width: 400px;
+        border-radius: 10px;
+        padding-left: 20px;
+        padding-top: 20px;
+    }
+    .aside .right .box{
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+    .aside .right{
+        border: 2px solid white;
+        box-shadow: inset 0px 0px 5px black;
+        height: 250px;
+        width: 400px;
+        border-radius: 10px;
+        background-color: #16a049;
+
+    }
+    
+    </style>
+</head>
+<body>
+<div class="outer">
+    <div class="navside">
+    <nav class="nav">
+        <div class="nhe">
+            <h2><i class='bx bxs-bell' ></i>&nbsp;&nbsp;Bell Labs</h2>
+            <hr style="color:#10b981">
+        </div>
+        <div class="btns">
+            <a href="#"><i class='bx bxs-home' ></i>&nbsp;&nbsp;Dashboard</a>
+            <a href="#"><i class='bx bxs-key' ></i>&nbsp;&nbsp;Projects</a>
+            <a href="#"><i class='bx bxs-envelope' ></i>&nbsp;&nbsp;Tasks</a>
+            <a href="#"><i class='bx bxs-layer-plus' ></i>&nbsp;&nbsp;Services</a>
+            <a href="#"><i class='bx bxs-message' ></i>&nbsp;&nbsp;Chats</a>
+        </div>
+
+    </nav>
+    </div>
+   <div class="side">
+    <header class="head">
+        <div class="hone">
+            <input type="text" placeholder="search...">
+            <p>Friday, 5 June </p>
+        </div>
+        <div class="htwo">
+            <a href="#">List View</a>
+            <a href=#>Grid View</a>
+        </div>
+    </header>
+    <br>
+    <section class="section">
+        <div class="she">
+        <h1 style="font-size: 40px; color: aliceblue;"><b>Latest Tasks</b></h1>
+    </div>
+    <div class="cont">
+<p style="color: whitesmoke;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus sed error molestias laudantium totam officiis,</p>
+<a href="#">Add more people</a>
+    </div>
+<div>
+    <table class="table" style="border-radius: 5px;">
+        <thead  class="table-dark" >
+            <tr>
+            <td ><i class='bx bx-checkbox-minus' ></i></td>
+            <td>Name</td>
+            <td>Title</td>
+            <td>Role</td>
+            <td></td>
+        </tr>
+        </thead>
+        <tbody >
+            <tr >
+                <td> <input type="checkbox"></td>
+                <td>John Smith</td>
+                <td>Developer</td>
+                <td>Member</td>
+                <td><a href="#" style="text-decoration: none;color: aqua;">Edit</a></td>
+            </tr>
+            <tr>
+                <td> <input type="checkbox"></td>
+                <td>John Smith</td>
+                <td>Developer</td>
+                <td>Member</td>
+                <td><a href="#" style="text-decoration: none;color: aqua;">Edit</a></td>
+            </tr>
+            <tr>
+                <td> <input type="checkbox"></td>
+                <td>John Smith</td>
+                <td>Developer</td>
+                <td>Member</td>
+                <td><a href="#" style="text-decoration: none;color: aqua;">Edit</a></td>
+            </tr>
+            <tr>
+                <td> <input type="checkbox"></td>
+                <td>John Smith</td>
+                <td>Developer</td>
+                <td>Member</td>
+                <td><a href="#" style="text-decoration: none;color: #10b981;">Edit</a></td>
+            </tr>
+            <tr>
+                <td> <input type="checkbox"></td>
+                <td>John Smith</td>
+                <td>Developer</td>
+                <td>Member</td>
+                <td><a href="#" style="text-decoration: none;color: #10b981">Edit</a></td>
+            </tr>
+            
+            <tr>
+                <td> <input type="checkbox"></td>
+                <td>John Smith</td>
+                <td>Developer</td>
+                <td>Member</td>
+                <td><a href="#" style="text-decoration: none;color: aqua;">Edit</a></td>
+            </tr>
+        </tbody>
+
+    </table>
+</div>
+    </section>
+    <aside class="aside">
+
+        <div class="left">
+            <h3><b>Projects in progress</b></h3>
+            <div class="box">
+                <p style="border:2px solid rgb(167, 97, 97);background-color:rgb(167, 97, 97) ; height: 25px;width: 200px;display: flex;align-items: center;justify-content: center;border-radius: 5px;">Deployment in progress</p>
+                <p style="border:2px solid rgb(167, 97, 97); background-color: rgb(167, 97, 97); height: 25px;width:100px;display: flex;align-items: center;justify-content: center;border-radius: 5px;">Build failed</p>
+            </div>
+            <h3>Improve code quality</h3>
+            <p>Raised by Manu Arora, 2 hours ago</p>
+            <div class="last">
+                <p ><i class='bx bx-message-rounded-dots'></i>&nbsp;17 comments &nbsp;&nbsp; <span>&nbsp;<i class='bx bxs-up-arrow-circle'></i>&nbsp23 files modified</span></p>
+            </div>
+
+        </div>
+        <div class="right">
+
+            <h3 style="color:aliceblue"><b>Projects Completed</b></h3>
+            <div class="box">
+                <p style="border:2px solid skyblue;background-color:skyblue ; height: 25px;width: 200px;display: flex;align-items: center;justify-content: center;border-radius: 5px;">Deployment in progress</p>
+                <p style="border:2px solid skyblue; background-color: skyblue; height: 25px;width:100px;display: flex;align-items: center;justify-content: center;border-radius: 5px;">Build passing</p>
+            </div>
+            <h3 style="color: aliceblue;">Improve code quality</h3>
+            <p style="color: aliceblue;">Raised by Manu Arora, 2 hours ago</p>
+            <div class="last">
+                <p style="color: aliceblue;"><i class='bx bx-message-rounded-dots'></i>&nbsp;17 comments &nbsp;&nbsp; <span>&nbsp;<i class='bx bxs-up-arrow-circle'></i>&nbsp23 files modified</span></p>
+
+            </div>
+        </div>
+    </aside>
+    </div>
+</div>
+</body>
+</html>
